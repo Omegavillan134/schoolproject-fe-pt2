@@ -1,13 +1,13 @@
 import { Link } from "react-router";
 
-export async function loader() {
-    return{}
-}
 export default function login() {
-    return (
-        <div>
-            <p>hello, world!</p>
-            <Link to="/dashboard">Go to dashboard</Link>
-        </div>
-)
+  return (
+    <div>
+      <p>hello, world!</p>
+      <div className="flex flex-col gap-2">
+        <Link to="/student/dashboard">Go to Student Dashboard</Link>
+        <Link to="/teacher/dashboard">Go to Teacher Dashboard</Link>
+      </div>
+    </div>
+  );
 }
