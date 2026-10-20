@@ -1,30 +1,18 @@
 import React from "react";
 import { useState } from "react";
+import { FileUploader } from "react-drag-drop-files";
+import type { InputHTMLAttributes } from 'react'
+
+const FILE_TYPES = ["PDF", "DOC", "DOCX", "PNG", "JPEG"]
 
 export default function create_file() {
-
-    const [error, setError] = useState('');
-    const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
-        event.preventDefault();
-
-        const files: FileList = event.dataTransfer.files;
-        if (files.length > 0){
-            const file: File = files[0];
-            console.log("Selected file" + file.name);
-        }
-    }
-    const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
-        event.preventDefault();
-    };
-
+    const [file, setFile] = useState<File | null>(null);
+    const handleChange = (incoming: File | File[]) => setFile(Array.isArray(incoming) ? incoming[0] : incoming)
 
     return(
-        <div
-            onDragOver={handleDragOver}
-            onDrop={handleDrop}
-            style={{ border: '2px dashed #ccc', padding: '20px', textAlign: 'center' }}
-        >
-        Drag And Drop Your files here
+        <div className="container">
+            <FileUploader handleChange={handleChange} name="file" types={FILE_TYPES} />
+            {file && <p>Selected: {file.name}</p>}
         </div>
     )
 }

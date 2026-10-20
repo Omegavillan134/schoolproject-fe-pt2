@@ -9,14 +9,40 @@ html,
 body {
   @apply bg-white dark:bg-gray-950;
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+  @media (prefers-color-scheme: white) {
+    color-scheme: white;
   }
+  
+  background-color:white;
 }
 
 .card {
-  border: 1px solid var(--color-sky-500);
+  border: 1px solid var(--color-green-300);
   border-radius: 8px;
   padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-xl)
+}
+
+nav a {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: all 0.2 ease;
+  padding: 4px 8px
+}
+nav a:hover{
+  background-color: var(--color-green-100);
+  border-color: var(--color-green-300);
+  box-shadow: var(--shadow-xl)
+}
+
+.link {
+  border-color: var(--color-green-300);
+  border-radius: 8px;
+  padding: 5px 10px;
+  transition: all 0.2 ease;
+}
+.link:hover {
+  background-color: var(--color-green-200);
+  box-shadow: var(--shadow-xl)
 }

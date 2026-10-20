@@ -68,7 +68,7 @@ export default function classed(){
     return(
         <div className="grid grid-cols-3 gap-4">
             <div className="flex col-span-3">
-                <div className="card min-w-full min-h-80">
+                <div className="card min-w-full min-h-60">
                     <p>{cls.subject}</p>
                 </div>
             </div>
@@ -83,7 +83,7 @@ export default function classed(){
                         {Teacher.map((val) => {
                             const c = Classes.find((c) => c.id === val.id);
                             return (
-                                <Link key={val.id} to={`/student/${c?.slug}/announcements`} className="card my-4 block">
+                                <Link key={val.id} to={`/student/${c?.slug}/announcements`} className="link card my-4 block">
                                     <p>{c?.slug}</p>
                                 </Link>
                             );

@@ -9,7 +9,7 @@ export default function AppLayout() {
 
   return (
     <div>
-      <main className="flex min-h-screen flex-row">
+      <main className="flex h-screen flex-row overflow-hidden">
         <div>
           <button
             onClick={() => setNavOpen((open) => !open)}
