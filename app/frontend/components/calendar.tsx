@@ -1,6 +1,5 @@
 export default function Calendar() {
     const today = new Date();
-    const month = today.toLocaleString('default', { month: 'long' });
     const year = today.getFullYear();
     const daysInMonth = new Date(year, today.getMonth() + 1, 0).getDate();
     const firstDayOfMonth = new Date(year, today.getMonth(), 1).getDay();
@@ -28,7 +27,7 @@ export default function Calendar() {
               className={`flex items-center justify-center rounded-full p-1 ${
                 day === today.getDate()
                   ? "bg-sky-500 text-white"
-                  : "text-gray-0"
+                  : "text-gray-700"
               }`}
             >
               {day}

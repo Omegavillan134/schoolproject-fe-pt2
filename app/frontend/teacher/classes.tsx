@@ -12,11 +12,10 @@ export default function classes() {
             <div className="relative">
                 <Link to="/teacher/create-class" className="fixed top-20 right-20 link bg-green-500 ">Create new Class</Link> 
             </div>
-            {classes.length > 0?(
-            <tbody>
+            {classes.length > 0 ? (
                 <div className="grid grid-cols-3 gap-10 min-h-80 w-180 pt-20">
-                    {classes.map((val,key) => {
-                        return(
+                    {classes.map((val, key) => {
+                        return (
                             <Link key={val.id} to={`/teacher/${val.slug}/class`}>
                                 <div className="card link flex h-80 w-60 flex-col items-center justify-center">
                                     <p>{val.subject}</p>
@@ -26,7 +25,6 @@ export default function classes() {
                         )
                     })}
                 </div>
-            </tbody>
             ) : (
                 <p>no classes found</p>
             )}  

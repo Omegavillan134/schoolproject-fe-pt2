@@ -75,17 +75,21 @@ export default function classed(){
             <div className="flex col-span-1 min-h-0">
                 <div className="card min-w-full overflow-y-auto min-h-0">
                     <p>Students</p>
-                    <table>
-                        <tr>
-                            <th>Attendance</th>
-                            <th>Student</th>
-                            <th>Remarks</th>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></input></td>
-                            <td>Lotho</td>
-                            <td><input type="text"></input></td>
-                        </tr>
+                    <table className="w-full">
+                        <thead>
+                            <tr>
+                                <th className="text-left">Attendance</th>
+                                <th className="text-left">Student</th>
+                                <th className="text-left">Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>Lotho</td>
+                                <td><input type="text" /></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
